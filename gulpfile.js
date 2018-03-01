@@ -31,7 +31,7 @@ var gulp = require('gulp'),
 gulp.task('html', function () {
   var YOUR_LOCALS = {};
 
-  return gulp.src('pug/*.pug')
+  return gulp.src('pug/index.pug')
     .pipe(pug({
       locals: YOUR_LOCALS,
       pretty: true
@@ -63,7 +63,7 @@ gulp.task('js', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch('pug/*.pug', ['html']);
+  gulp.watch('pug/index.pug', ['html']);
   // gulp.watch('scss/*.scss', ['css']);
   gulp.watch('js/*.js', ['js']);
 });
