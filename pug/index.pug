@@ -1,0 +1,545 @@
+doctype html
+html
+
+  head
+
+    meta(charset="UTF-8")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    title Waxom
+    link(rel="stylesheet" href="css/style.css")
+
+  body
+
+    header#header.section.dark_section.header
+      nav.container.header__container
+
+        .float_col.col_11.header__menu_container
+          a.logo.header__logo(href="#")
+            .img_wrap.logo__img
+              img.img_wrap__img(src="img/logo.png" alt="Логотип")
+
+            h2.logo__title Waxom
+
+
+          a.header__menu_checker.fa_icon.fa_icon_bars(href="#")
+
+          -
+            var main_menu_items = [
+              {
+                link: 'main_slider',
+                title: 'home'
+              },
+              {
+                link: '',
+                title: 'about us'
+              },
+              {
+                link: 'gallery',
+                title: 'portfolio'
+              },
+              {
+                link: 'features',
+                title: 'features'
+              },
+              {
+                link: 'blog',
+                title: 'blog'
+              },
+              {
+                link: '',
+                title: 'pricing'
+              },
+              {
+                link: '',
+                title: 'shortcodes'
+              },
+              {
+                link: 'footer',
+                title: 'contact'
+              }
+              // {link: 'wordpress_theme', title: 'wordpress'},
+              
+              // {link: 'ideas', title: 'ideas'},
+              
+              // {link: 'video_presentation', title: 'presentation'},
+              
+              // {link: 'excellent', title: 'excellent'},
+              
+              // {link: 'counters', title: 'statistics'},
+              
+              // {link: 'clients', title: 'clients'}
+            ]
+
+          ul.menu.header__menu
+            for item in main_menu_items
+              li.menu__item
+                a.menu__link(href="#" + item.link) #{item.title}
+
+
+        .float_col.col_1.header__icons
+          a.sl_icon.sl_icon_bag.header__icon_cart(href="#")
+          a.fa_icon.fa_icon_search.header__icon_search(href="#")
+
+
+      
+
+
+    section#main_slider.section.dark_section.main_slider
+
+      ul.main_slider__slider_list
+
+        li.main_slider__slide
+
+          .dark_section__foreground.main_slider__foreground
+
+          article.container.main_slider__container
+
+            h1.col_6_n_30_px.title.section__title.main_slider__title Unique and Modern Design
+              b.main_slider__bold Portfolio PSD Template
+            
+          
+            p.col_6_n_30_px.section__desc.main_slider__desc Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+
+            a.btn.main_slider__btn(href="#") Get started
+
+          
+
+        
+
+      
+
+      .slider_nav.main_slider__nav
+
+        a.slider_nav__arrow.slider_nav__prev(href="#")
+        a.slider_nav__arrow.slider_nav__next(href="#")
+
+        ul.slider_nav__thumbs.main_slider__thumbs
+          - for (var i = 0; i < 5; i++)
+            li.slider_nav__thumb.main_slider__thumb
+              if i == 1
+                a.thumb__link.main_slider__thumb_link.active(href="#")
+                  span.thumb__dot
+              else
+                a.thumb__link.main_slider__thumb_link(href="#")
+                  span.thumb__dot
+
+          
+        
+
+      
+
+
+
+    #features.section.light_section.features
+      .container
+
+        -
+         var features = [
+            {
+              title: 'Web &amp; App Design',
+              desc: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.'
+            },
+            {
+              title: 'Development',
+              desc: 'Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.'
+            },
+            {
+              title: 'Customization',
+              desc: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.'
+            },
+            {
+              title: 'Marketing',
+              desc: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.'
+            }
+          ]
+
+        for feature in features
+          article.float_col.col_3.feature
+            .im_icon.im_icon_pencil.feature__icon
+            h3.title.light_section__title.feature__title #{feature.title}
+            p.feature__desc #{feature.desc}
+
+
+
+      
+
+
+    section#ideas.section.light_section.ideas
+      .container.ideas__container
+
+        h2.title.section__title.light_section__title Waxom is Realization of your Ideas.
+
+        p.col_8.section__desc.light_section__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+
+        ul.ideas__slider
+          li.col_8.img_wrap.ideas__slide.prev
+            img.img_wrap__img(src="1.jpg" alt="1")
+          
+          li.col_8.img_wrap.ideas__slide.current
+            img.img_wrap__img(src="2.jpg" alt="2")
+          
+          li.col_8.img_wrap.ideas__slide.next
+            img.img_wrap__img(src="3.jpg" alt="3")
+          
+        
+
+      
+
+
+    section#wordpress_theme.section.dark_section.wordpress_theme
+      .container.wordpress_theme__container
+
+        article.col.wordpress_theme__wrap
+          h2.title.section__title.wordpress_theme__title
+            b.wordpress_theme__bold Waxom Multipurpose WordPress Theme
+          
+          p.section__desc.wordpress_theme__desc Don't Forget to Rate the Template. Thanks so much!
+        
+
+        a.btn.wordpress_theme__btn(href="#") Purchase now
+
+      
+
+
+    section#gallery.section.light_section.gallery
+      .container
+
+        h2.title.section__title.light_section__title Our Latest Projects.
+
+        p.col.col_8.section__desc.light_section__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+
+        ul.col.col_7.menu.gallery__menu
+          each item, index in ['all', 'web design', 'mobile app', 'illustration', 'photography']
+            li.menu__item
+              if index == 0
+                a.menu__link.active(href="#") #{item}
+              else
+                a.menu__link(href="#") #{item}
+
+        
+
+        -
+          var gallery_items = [
+            {
+              id: 1,
+              title: 'Claritas Etiam Processus',
+              tags: ['Photography', 'Nature']
+            },
+            {
+              id: 2,
+              title: 'Quam Nutamus Farum',
+              tags: ['Graphic Design', 'Mock-Up']
+            },
+            {
+              id: 3,
+              title: 'Usus Legentis Videntur',
+              tags: ['Photography', 'Holiday']
+            },
+            {
+              id: 4,
+              title: 'Claritas Etiam Processus',
+              tags: ['Photography', 'Nature']
+            },
+            {
+              id: 5,
+              title: 'Quam Nutamus Farum',
+              tags: ['Graphic Design', 'Mock-Up']
+            },
+            {
+              id: 6,
+              title: 'Usus Legentis Videntur',
+              tags: ['Photography', 'Holiday']
+            }
+          ]
+
+        .clearfix.gallery__list
+
+          for item, index in gallery_items
+            .float_col.col_4
+              figure.card.gallery__item
+                .img_wrap.gallery__img_wrap
+                  img.img_wrap__img(src=(index + 1) + ".jpg" alt=item.title)
+                .gallery__text
+                  figcaption.title.light_section__title.gallery__title #{item.title}
+                  p.gallery__tags
+                    each tag, index in item.tags
+                      if index == 0
+                        a.gallery__tag(href="#") Photography
+                      else
+                        |, 
+                        |a.gallery__tag(href="#") Nature
+                .card__date
+                  span.card__day 30
+                  span.card__month Sep
+                .clearfix.gallery__item_nav
+                  a.im_icon.im_icon_link.gallery__item_nav_link(href="#")
+                  a.im_icon.im_icon_search.gallery__item_nav_more(href="#")
+              
+            
+          
+
+            
+          
+
+        
+
+        a.btn.gallery__btn(href="#") Load more
+
+      
+
+
+    section#video_presentation.section.dark_section.video_presentation
+      .dark_section__foreground
+
+      .container
+
+        a.video_presentation__nav(href="#")
+          span.fa_icon.fa_icon_circle-o-notch.video_presentation__spinner
+          span.sl_icon.sl_icon_control-play.video_presentation__control
+        
+
+        h2.title.section__title.dark_section__title.video_presentation__title Waxom Video Presentation
+
+        p.col_6.section__desc.dark_section__desc.video_presentation__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.
+
+        span.video_presentation__time 03:26
+
+      
+
+
+    section#excellent.section.light_section.excellent
+      .container
+
+        .col.col_7.excellent__text 
+
+          h2.title.section__title.light_section__title.excellent__title Excellent for Mobile Devices.
+          
+          p.section__desc.light_section__desc.excellent__desc Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+
+          -
+            var excellent_items = [
+              'Nam liber tempor cum soluta nobis eleifend option;',
+              'Option congue nihil imperdiet doming id quod mazim placerat facer;',
+              'Eodem modo typi, qui nunc nobis videntur parum futurum;',
+              'Investigationes demonstraverunt lectores'
+            ]
+
+          ul.excellent__list
+            each item in excellent_items
+              li.list__item #{item}
+          
+
+        
+
+        .clearfix.col.col_5.img_wrap.excellent__img_wrap
+          img(src="img/excellent.png" alt="excellent.img_wrap__img")
+        
+
+      
+
+
+    -
+      var counters = [
+        {
+          icon_classes: 'sl_icon sl_icon_people counter__icon counter__icon_people',
+          number: 3587,
+          title: 'Satisfied Clients'
+        },
+        {
+          icon_classes: 'sl_icon sl_icon_cup counter__icon',
+          number: 207,
+          title: 'Cups of coffee'
+        },
+        {
+          icon_classes: 'fa_icon fa_icon_commenting-o counter__icon',
+          number: 2500,
+          title: 'Blog.posts'
+        },
+        {
+          icon_classes: 'sl_icon sl_icon_heart counter__icon',
+          number: 873,
+          title: 'Likes'
+        },
+        {
+          icon_classes: 'fa_icon fa_icon_cutlery counter__icon',
+          number: 900,
+          title: 'We launched'
+        }
+      ]
+
+    #counters.section.dark_section.counters
+      ul.container
+        for counter in counters
+          li.float_col.col_2.counter
+            div(class=counter.icon_classes)
+            .counter__number #{counter.number}
+            .counter__title #{counter.title}
+        
+      
+
+
+    section#blog.section.light_section.blog
+      .container
+
+        h2.title.section__title.light_section__title Recent Posts.
+
+        p.col.col_8.section__desc.light_section__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+
+        .clearfix.posts__list
+
+          - for (var i = 1; i <= 3; i++)
+            .float_col.col_4
+              article.card.post
+                .img_wrap.post__img_wrap
+                  img.img_wrap__img(src="" alt="Lorem ipsum dolor sit amet")
+                
+                .post__text 
+                  h3.title.light_section__title.post__title Lorem ipsum dolor sit amet
+                  p.post__desc Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                  a.more_link.post__link(href="#") Read More
+                
+                .card__date
+                  span.card__day 30
+                  span.card__month Sep
+                
+            
+          
+
+            
+          
+
+        
+
+        .clearfix.blog__slider_nav
+          a.im_icon.im_icon_arrow-left-circle.blog__nav_icon_prev(href="#")
+          a.im_icon.im_icon_arrow-right-circle.blog__nav_icon_next(href="#")
+        
+
+      
+
+
+    #clients.section.dark_section.clients
+      .dark_section__foreground
+
+      ul.container.clients__slider
+        -for (var i = 1; i <= 4; i++)
+          li.float_col.col_3.clients__slide
+            a.img_wrap.clients__link(href="#")
+              img.img_wrap__img.clients__img(src="img/clients/" + i + ".png" alt="")
+
+        
+      
+
+
+    footer#footer.section.dark_section.footer
+
+      section.section.footer_top
+        .container
+
+          article.float_col.col_3.footer_top__article
+            a.logo(href="#")
+              .img_wrap.logo__img
+                img.img_wrap__img(src="img/logo.png" alt="Логотип")
+              
+              h2.logo__title Waxom
+            
+
+            p.footer_top__desc.main Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
+            a.more_link.footer_top__link.more(href="#") Read more
+          
+
+          article.float_col.col_3.footer_top__article
+            h3.title.footer_top__title Recent Posts
+
+            -
+              var footer_posts_1 = [
+                'Lorem ipsum dolor sit amet, consectetuer adipiscing elit',
+                'Diam nonummy nibh euismod tincidunt ut laoreet dolore magna',
+                'Claritas est etiam processus dynamicus, qui sequitur mutationem per seacula quarta decima'
+              ]
+
+            for post, index in footer_posts_1
+              if index < 2
+                .footer_top__post
+                  span.footer_top__date September 08, 2015
+                  p.footer_top__desc #{post}
+              else
+                .footer_top__post.last
+                  span.footer_top__date September 08, 2015
+                  p.footer_top__desc #{post}
+            
+          
+
+          article.float_col.col_3.footer_top__article
+            h3.title.footer_top__title Our Twitter
+
+            -
+              var footer_posts_2 = [
+                {
+                  desc: 'a.footer_top__link"(href="#"@waxom Cum soluta nobis eleifend option congue nihil imperdiet doming',
+                  date: '3 mins'
+                },
+                {
+                  desc: 'Mirum est a.footer_top__link"(href="#"#envato notare quam littera gothica, quam nunc putamus parum anteposuerit litterarum',
+                  date: '5 hours'
+                },
+                {
+                  desc: 'Soluta nobis option b.footer__bold.footer_top__bold"bit.ly/1Hniso7',
+                  date: '20 days'
+                }
+              ]
+
+            for post in footer_posts_2
+              .footer_top__post
+                p.footer_top__desc #{post.desc}
+                span.footer_top__date #{post.date} ago
+            
+          
+
+          .float_col.col_3.footer_top__article
+            h3.title.footer_top__title Dribbble Widget
+
+            - for (var i = 1; i <= 4; i++)
+              .img_wrap.footer_top__img_wrap
+                img.img_wrap__img(src=i alt=i)
+
+          
+
+        
+      
+
+      .section.footer_bottom
+        .container
+
+          -
+            var footer_menu = [
+              'Copyright © 2015 a(href="#.menu__link"b.footer__bold.footer_bottom__bold"Waxom',
+              'a(href="#.menu__link"Privacy Policy',
+              'a(href="#.menu__link"FAQ',
+              'a(href="#.menu__link"Support'
+            ]
+
+          ul.col.col_6.menu.footer_bottom__left_menu
+            for item in footer_menu
+              li.menu__item #{item}
+
+          
+          .clearfix.col.col_6.footer_bottom__right_menu_wrap
+            ul.menu.footer_bottom__right_menu
+              li.menu__item Designed by
+                | 
+                a.menu__link(href="#")
+                  b.footer__bold.footer_bottom__bold ThemeFire
+              li.menu__item.last Only on
+                | 
+                a.menu__link(href="#")
+                  b.footer__bold.footer_bottom__bold Envato Market
+            
+          
+        
+      
+
+    #foreground
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+    script(src="js/script.min.js")
