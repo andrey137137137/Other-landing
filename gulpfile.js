@@ -7,7 +7,10 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     minifyCSS = require('gulp-minify-css'),
     notify = require("gulp-notify"),
-    pug = require('gulp-pug');
+    pug = require('gulp-pug'),
+    googleCdn = require('gulp-google-cdn'),
+    gulpFilter = require('gulp-filter'),
+    mainBowerFiles = require('gulp-main-bower-files');
 
 // gulp.task('connect', function () {
 //   connect.server({
@@ -32,10 +35,12 @@ gulp.task('html', function () {
   var YOUR_LOCALS = {};
 
   return gulp.src('pug/index.pug')
+  // return gulp.src('index.html')
     .pipe(pug({
       locals: YOUR_LOCALS,
       pretty: true
     }))
+    .pipe(googleCdn(require('./bower.json')))
     .pipe(gulp.dest('app'));
     // .pipe(connect.reload());
 });
@@ -55,19 +60,29 @@ gulp.task('css', function () {
     // .pipe(connect.reload());
 });
 
+gulp.task('js_libs', function() {
+  var filterJS = gulpFilter('**/*.js', {restore: true});
+
+  return gulp.src('./bower.json')
+    .pipe(mainBowerFiles())
+    .pipe(filterJS)
+    .pipe(gulp.dest('app/libs/js'));
+});
+
 gulp.task('js', function () {
-  return gulp.src(['js/lib/*.js', 'js/*.js'])
+
+  return gulp.src('js/*.js')
     .pipe(concat('script.min.js'))
     .pipe(gulp.dest('app/js'));
     // .pipe(connect.reload());
-})
-
-gulp.task('watch', function () {
-  gulp.watch('pug/*.pug', ['html']);
-  gulp.watch(['scss/*.scss', 'scss/normalize/*.scss'], ['css']);
-  gulp.watch('js/*.js', ['js']);
 });
 
+// gulp.task('watch', function () {
+//   gulp.watch('pug/*.pug', ['html']);
+//   gulp.watch(['scss/*.scss', 'scss/normalize/*.scss'], ['css']);
+//   gulp.watch('js/*.js', ['js']);
+// });
+
 // gulp.task('default', ['connect', 'html', 'css', 'js', 'watch']);
-gulp.task('default', ['html', 'css', 'js', 'watch']);
-// gulp.task('default', ['html', 'js', 'watch']);
+// gulp.task('default', ['html', 'css', 'js', 'watch']);
+gulp.task('default', ['html', 'css', 'js_libs', 'js']);
