@@ -12,7 +12,7 @@
 {
   position: fixed;
   top: 0;
-  z-index: $z1;
+  z-index: unquote($z1);
   padding-top: 41px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
@@ -26,12 +26,12 @@
     // &__menu_container,
     // &__icons {
     //   margin-left: 0;
-    //   width: $w380px;
+    //   width: unquote($w380px);
     // }
 
     &__menu_container {
-      // width: $w760px;
-      width: $w770px;
+      // width: unquote($w760px);
+      width: unquote($w770px);
     }
 
       &__logo
@@ -73,8 +73,8 @@
       }
 
     &__icons {
-      // width: $w380px;
-      width: $w370px;
+      // width: unquote($w380px);
+      width: unquote($w370px);
     }
 
       &__icon_cart {
@@ -131,7 +131,7 @@
       // }
 
       &__container {
-        z-index: $z2;
+        z-index: unquote($z2);
         padding-top: 140px;
         height: 100%;
       }
@@ -139,8 +139,8 @@
         &__title,
         &__desc {
           // margin: 0 auto;
-          margin: 0 $w30px;
-          // width: $w600px;
+          margin: 0 unquote($w30px);
+          // width: unquote($w600px);
         }
 
         &__title {
@@ -357,7 +357,7 @@
         &.current {
           top: 0;
           left: 50%;
-          z-index: $z2;
+          z-index: unquote($z2);
           transform: translateX(-50%);
         }
 
@@ -375,7 +375,7 @@
   background: linear-gradient(to right, $grdBlackColor, $bgColor);
 
   // &__container {
-  //   padding: 0 $w30px;
+  //   padding: 0 unquote($w30px);
   // }
 
     &__wrap {
@@ -726,9 +726,9 @@
   // height: 753px;
 
   &__slider_nav {
-    margin: 34px auto 0;
+    margin: 34px auto 2px;
     width: 52px;
-    // width: $w52px;
+    // width: unquote($w52px);
     font-weight: 300;
     font-size: 23px;
     color: $hoverColor;
@@ -951,7 +951,7 @@
   &__left_menu,
   &__right_menu
   {
-    // width: $w1200px;
+    // width: unquote($w1200px);
     font-style: normal;
 
     .menu

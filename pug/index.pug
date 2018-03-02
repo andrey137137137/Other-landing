@@ -94,11 +94,11 @@ html
       }
     })
       ul.ideas__slider
-        li.col_8.img_wrap.ideas__slide.prev
+        li.img_wrap.ideas__slide.prev
           img.img_wrap__img(src="1.jpg" alt="1")
-        li.col_8.img_wrap.ideas__slide.current
+        li.img_wrap.ideas__slide.current
           img.img_wrap__img(src="2.jpg" alt="2")
-        li.col_8.img_wrap.ideas__slide.next
+        li.img_wrap.ideas__slide.next
           img.img_wrap__img(src="3.jpg" alt="3")
 
     |
@@ -113,11 +113,13 @@ html
     //-   .container.wordpress_theme__container
 
     +dark_section({class: 'wordpress_theme', is_container_class: true})
-        article.col.wordpress_theme__wrap
-          h2.title.section__title.wordpress_theme__title
-            b.wordpress_theme__bold Waxom Multipurpose WordPress Theme
-          p.section__desc.wordpress_theme__desc Don't Forget to Rate the Template. Thanks so much!
-        a.btn.wordpress_theme__btn(href="#") Purchase now
+      article.col.wordpress_theme__wrap
+        h2.title.section__title.wordpress_theme__title
+          b.wordpress_theme__bold Waxom
+          |
+          | Multipurpose WordPress Theme
+        p.section__desc.wordpress_theme__desc Don't Forget to Rate the Template. Thanks so much!
+      a.btn.wordpress_theme__btn(href="#") Purchase now
 
     |
     |
@@ -181,9 +183,9 @@ html
           }
         ]
 
-      .clearfix.gallery__list
+      ul.clearfix.gallery__list
         for item, index in gallery_items
-          .float_col.col_4
+          li.float_col.col_4
             figure.card.gallery__item
               .img_wrap.gallery__img_wrap
                 img.img_wrap__img(src=(index + 1) + ".jpg" alt=item.title)
@@ -218,14 +220,14 @@ html
     //-   .container
 
     +dark_section({class: 'video_presentation', is_foreground: true})
-        a.video_presentation__nav(href="#")
-          span.fa_icon.fa_icon_circle-o-notch.video_presentation__spinner
-          span.sl_icon.sl_icon_control-play.video_presentation__control
-        
-        h2.title.section__title.dark_section__title.video_presentation__title Waxom Video Presentation
-        p.col_6.section__desc.dark_section__desc.video_presentation__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.
+      a.video_presentation__nav(href="#")
+        span.fa_icon.fa_icon_circle-o-notch.video_presentation__spinner
+        span.sl_icon.sl_icon_control-play.video_presentation__control
+      
+      h2.title.section__title.dark_section__title.video_presentation__title Waxom Video Presentation
+      p.col_6.section__desc.dark_section__desc.video_presentation__desc Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.
 
-        span.video_presentation__time 03:26
+      span.video_presentation__time 03:26
 
     |
     |
@@ -326,12 +328,12 @@ html
         desc: 'Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.'
       }
     })
-      .clearfix.posts__list
+      ul.clearfix.blog__list
         - for (var i = 1; i <= 3; i++)
-          .float_col.col_4
+          li.float_col.col_4
             article.card.post
               .img_wrap.post__img_wrap
-                img.img_wrap__img(src="" alt="Lorem ipsum dolor sit amet")
+                img.img_wrap__img(src="img/blog/thumbs/" + i + ".jpg" alt="Lorem ipsum dolor sit amet")
               .post__text 
                 h3.title.light_section__title.post__title Lorem ipsum dolor sit amet
                 p.post__desc Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
@@ -341,8 +343,8 @@ html
                 span.card__month Sep
               
       .clearfix.blog__slider_nav
-        a.im_icon.im_icon_arrow-left-circle.blog__nav_icon_prev(href="#")
-        a.im_icon.im_icon_arrow-right-circle.blog__nav_icon_next(href="#")
+        a.im_icon.im_icon_arrow-left-circle.blog__nav_prev(href="#")
+        a.im_icon.im_icon_arrow-right-circle.blog__nav_next(href="#")
 
     |
     |
@@ -362,10 +364,10 @@ html
       container_is_ul: true,
       container_class: 'slider'
     })
-        - for (var i = 1; i <= 4; i++)
-          li.float_col.col_3.clients__slide
-            a.img_wrap.clients__link(href="#")
-              img.img_wrap__img.clients__img(src="img/clients/" + i + ".png" alt="")
+      - for (var i = 1; i <= 4; i++)
+        li.float_col.col_3.clients__slide
+          a.img_wrap.clients__link(href="#")
+            img.img_wrap__img.clients__img(src="img/clients/" + i + ".png" alt="")
 
     |
     |
