@@ -9,8 +9,8 @@
 body {
   position: relative;
   // padding-top: 1px;
-  // font: 300 87.5%/1.5 @reserveFonts;
-  font: 87.5%/1.5 @reserveFonts;
+  // font: 300 87.5%/1.5 $reserveFonts;
+  font: 87.5%/1.5 $reserveFonts;
 }
 
 .section
@@ -26,7 +26,7 @@ body {
 {
   position: relative;
   font-weight: 300;
-  color: @white;
+  color: $white;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover !important;
@@ -67,13 +67,13 @@ body {
     // flex-wrap: wrap;
     margin: 0 auto;
     // padding: 0 15px;
-    padding: 0 @colMrg;
+    padding: 0 $colMrg;
     // width: 320px;
     width: 100%;
     min-width: 100px;
     max-width: 1230px;
     // height: 100%;
-    outline: 1px solid #070;
+    // outline: 1px solid #070;
   }
 
   // a,
@@ -87,8 +87,8 @@ body {
 
     .float_col,
     .col {
-      // margin: 0 @w15px;
-      padding: 0 @colMrg;
+      // margin: 0 $w15px;
+      padding: 0 $colMrg;
     }
 
     .float_col
@@ -106,12 +106,12 @@ body {
     .col
     {
       // float: left;
-      // margin-left: @w30px;
-      // width: @w270px;
+      // margin-left: $w30px;
+      // width: $w270px;
 
       &_1 {
-        // width: @w570px;
-        width: @w600px;
+        // width: $w570px;
+        width: $w600px;
       }
 
       &_2,
@@ -125,8 +125,8 @@ body {
       &_10,
       &_11,
       &_12 {
-        // width: @w1170px;
-        width: @w1200px;
+        // width: $w1170px;
+        width: $w1200px;
       }
     }
 
@@ -145,8 +145,8 @@ body {
         // font-weight: 500;
         // font-size: 2.428571428571429em;
         // line-height: 1.617647058823529em;
-        font: 500 2.428571428571429em/1.617647058823529 'Raleway', @reserveFonts;
-        color: @white;
+        font: 500 2.428571428571429em/1.617647058823529 'Raleway', $reserveFonts;
+        color: $white;
       }
     }
 
@@ -162,7 +162,7 @@ body {
       }
 
       .title {
-        font-family: 'Raleway', @reserveFonts;
+        font-family: 'Raleway', $reserveFonts;
       }
 
       ul {
@@ -179,21 +179,21 @@ body {
             display: block;
             color: inherit;
             text-transform: capitalize;
-            transition: color @trsTime;
+            transition: color $trsTime;
           }
       }
 
-      .@{simple-line-icon-prefix},
-      .@{fa-css-prefix},
-      .@{icomoon-prefix}
+      .#{$simple-line-icon-prefix},
+      .#{$fa-css-prefix},
+      .#{$icomoon-prefix}
       {
         // display: block;
         color: inherit;
-        transition: color @trsTime;
+        transition: color $trsTime;
 
         &.active,
         &:hover {
-          color: @hoverColor;
+          color: $hoverColor;
         }
       }
 
@@ -202,11 +202,11 @@ body {
       //   display: block;
       //   font-family: 'FontAwesome';
       //   color: inherit;
-      //   transition: color @trsTime;
+      //   transition: color $trsTime;
 
       //   &.active,
       //   &:hover {
-      //     color: @hoverColor;
+      //     color: $hoverColor;
       //   }
 
       //   &_bars:before {
@@ -269,22 +269,22 @@ body {
 
       .btn {
         display: block;
-        // border: 2px solid @btnColor;
+        // border: 2px solid $btnColor;
         border-radius: 5px;
-        // width: @w170px;
+        // width: $w170px;
         width: 170px;
         height: 53px;
-        font: 800 1em/53px 'Raleway', @reserveFonts;
+        font: 800 1em/53px 'Raleway', $reserveFonts;
         text-align: center;
         text-transform: uppercase;
-        color: @white;
-        background-color: @btnColor;
+        color: $white;
+        background-color: $btnColor;
         box-shadow: 0 -3px #736357 inset;
-        transition: color @trsTime, background-color @trsTime;
+        transition: color $trsTime, background-color $trsTime;
 
         &:hover {
-          color: @btnColor;
-          background-color: @white;
+          color: $btnColor;
+          background-color: $white;
         }
       }
 
@@ -294,9 +294,9 @@ body {
   //   {
   //     width: 52px;
   //     height: 52px;
-  //     border: 3px solid @white;
+  //     border: 3px solid $white;
   //     transform: rotate(45deg);
-  //     transition: border @trsTime;
+  //     transition: border $trsTime;
 
   //     &:hover {
   //       border: 3px solid #d3c1ad;
@@ -326,8 +326,8 @@ body {
         position: absolute;
         right: 0;
         font-size: 1em;
-        font-family: @fa-font-family;
-        content: @fa-var-caret-right;
+        font-family: $fa-font-family;
+        content: $fa-var-caret-right;
       }
     }
 
@@ -349,12 +349,12 @@ body {
 
     &__title {
       font-size: 2.142857142857143em;
-      color: @darkGrey;
+      color: $darkGrey;
     }
 
     &__desc {
       margin-top: 11px;
-      // width: @w770px;
+      // width: $w770px;
       font-size: 1.142857142857143em;
       line-height: 1.75;
     }
@@ -372,14 +372,14 @@ body {
       width: 50px;
       height: 60px;
       text-align: center;
-      color: @white;
+      color: $white;
       overflow: hidden;
     }
 
       &__day,
       &__month {
         display: block;
-        transition: background-color @trsTime;
+        transition: background-color $trsTime;
       }
 
       &__day {
@@ -391,14 +391,14 @@ body {
 
       &__month {
         height: 25px;
-        font: 400 0.8571428571428571em/25px 'Roboto', @reserveFonts;
+        font: 400 0.8571428571428571em/25px 'Roboto', $reserveFonts;
         background-color: #252525;
       }
 
     &:hover &
     {
       &__day {
-        background-color: @hoverColor;
+        background-color: $hoverColor;
       }
 
       &__month {

@@ -40,20 +40,20 @@ gulp.task('html', function () {
     // .pipe(connect.reload());
 });
 
-// gulp.task('css', function () {
-//   return gulp.src('scss/*.scss')
-//     // .pipe(cssGlobbing())
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(concatCss("bundle.css"))
-//     .pipe(autoprefixer({
-//         browsers: ['last 15 versions'],
-//         cascade: false
-//     }))
-//     // .pipe(minifyCSS())
-//     .pipe(rename("style.min.css"))
-//     .pipe(gulp.dest('app/css'));
-//     // .pipe(connect.reload());
-// });
+gulp.task('css', function () {
+  return gulp.src('scss/*.scss')
+    // .pipe(cssGlobbing())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concatCss("bundle.css"))
+    .pipe(autoprefixer({
+        browsers: ['last 15 versions'],
+        cascade: false
+    }))
+    // .pipe(minifyCSS())
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest('app/css'));
+    // .pipe(connect.reload());
+});
 
 gulp.task('js', function () {
   return gulp.src(['js/lib/*.js', 'js/*.js'])
@@ -64,10 +64,10 @@ gulp.task('js', function () {
 
 gulp.task('watch', function () {
   gulp.watch('pug/*.pug', ['html']);
-  // gulp.watch('scss/*.scss', ['css']);
+  gulp.watch(['scss/*.scss', 'scss/normalize/*.scss'], ['css']);
   gulp.watch('js/*.js', ['js']);
 });
 
 // gulp.task('default', ['connect', 'html', 'css', 'js', 'watch']);
-// gulp.task('default', ['html', 'css', 'js', 'watch']);
-gulp.task('default', ['html', 'js', 'watch']);
+gulp.task('default', ['html', 'css', 'js', 'watch']);
+// gulp.task('default', ['html', 'js', 'watch']);

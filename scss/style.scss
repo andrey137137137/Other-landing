@@ -1,22 +1,22 @@
-@import url('variables.less');
+@import 'variables';
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200, 300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
 
-@import url('simple-line-icons.less');
-@import url('font-awesome.less');
-@import url('icomoon.less');
-@import url('normalize.less');
-@import url('general.less');
+@import 'simple-line-icons';
+@import 'font-awesome';
+@import 'icomoon';
+@import "normalize/import-now";
+@import 'general';
 
 .header
 {
   position: fixed;
   top: 0;
-  z-index: @z1;
+  z-index: $z1;
   padding-top: 41px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
-  transition: all @trsTime;
+  transition: all $trsTime;
 
   &__container {
     height: 56px;
@@ -26,12 +26,12 @@
     // &__menu_container,
     // &__icons {
     //   margin-left: 0;
-    //   width: @w380px;
+    //   width: $w380px;
     // }
 
     &__menu_container {
-      // width: @w760px;
-      width: @w770px;
+      // width: $w760px;
+      width: $w770px;
     }
 
       &__logo
@@ -67,14 +67,14 @@
           {
             &.active,
             &:hover {
-              color: @hoverColor;
+              color: $hoverColor;
             }
           }
       }
 
     &__icons {
-      // width: @w380px;
-      width: @w370px;
+      // width: $w380px;
+      width: $w370px;
     }
 
       &__icon_cart {
@@ -92,7 +92,7 @@
 
   &.narrow {
     padding-top: 5px;
-    background-color: @bgColor;
+    background-color: $bgColor;
   }
 }
 
@@ -131,7 +131,7 @@
       // }
 
       &__container {
-        z-index: @z2;
+        z-index: $z2;
         padding-top: 140px;
         height: 100%;
       }
@@ -139,8 +139,8 @@
         &__title,
         &__desc {
           // margin: 0 auto;
-          margin: 0 @w30px;
-          // width: @w600px;
+          margin: 0 $w30px;
+          // width: $w600px;
         }
 
         &__title {
@@ -159,7 +159,7 @@
           margin-top: 25px;
           font-size: 1em;
           // line-height: 1.5;
-          color: @white;
+          color: $white;
         }
 
       &__btn {
@@ -184,9 +184,9 @@
             top: -65px;
             width: 32px;
             height: 32px;
-            border: 3px solid @white;
+            border: 3px solid $white;
             transform: rotate(45deg);
-            transition: border @trsTime;
+            transition: border $trsTime;
 
             &:hover {
               border: 3px solid #d3c1ad;
@@ -229,7 +229,7 @@
             padding: 5px;
             width: 21px;
             height: 21px;
-            transition: padding @trsTime;
+            transition: padding $trsTime;
 
             .thumb__dot {
               display: block;
@@ -238,7 +238,7 @@
               height: 11px;
               background-color: rgba(255, 255, 255, .5);
               content: '';
-              transition: all @trsTime;
+              transition: all $trsTime;
             }
 
             &.active
@@ -270,7 +270,7 @@
   {
     &__icon,
     &__title {
-      transition: color @trsTime;
+      transition: color $trsTime;
     }
 
     &__icon {
@@ -296,7 +296,7 @@
       margin: 26px auto;
       border-top: 3px solid #f1eee9;
       width: 70px;
-      transition: border @trsTime;
+      transition: border $trsTime;
       content: '';
     }
 
@@ -304,12 +304,12 @@
     {
       &__icon,
       &__title {
-        color: @hoverColor;
+        color: $hoverColor;
       }
     }
 
     &:hover:after {
-      border-top: 3px solid @hoverColor;
+      border-top: 3px solid $hoverColor;
     }
   }
 
@@ -337,7 +337,7 @@
         padding-top: 52px;
         width: 100%;
         height: 100%;
-        background: @black url(../img/bg/ideas.jpg) no-repeat;
+        background: $black url(../img/bg/ideas.jpg) no-repeat;
 
         &.prev,
         &.current,
@@ -357,7 +357,7 @@
         &.current {
           top: 0;
           left: 50%;
-          z-index: @z2;
+          z-index: $z2;
           transform: translateX(-50%);
         }
 
@@ -371,11 +371,11 @@
 {
   padding: 39px 0 49px;
   // height: 150px;
-  background-color: @bgColor;
-  background: linear-gradient(to right, @grdBlackColor, @bgColor);
+  background-color: $bgColor;
+  background: linear-gradient(to right, $grdBlackColor, $bgColor);
 
   // &__container {
-  //   padding: 0 @w30px;
+  //   padding: 0 $w30px;
   // }
 
     &__wrap {
@@ -389,7 +389,7 @@
 
         &__bold {
           font-weight: inherit;
-          color: @hoverColor;
+          color: $hoverColor;
         }
 
       &__desc {
@@ -428,13 +428,13 @@
         line-height: 30px;
         text-transform: capitalize;
         color: #8c8c8c;
-        transition: all @trsTime;
+        transition: all $trsTime;
 
         &.active,
         &:hover {
           border: 1px solid #998675;
           background-color: #998675;
-          color: @white;
+          color: $white;
         }
       }
   }
@@ -445,25 +445,25 @@
       margin-top: 30px;
       // height: 337px;
       background-color: #fbfaf8;
-      transition: background-color @trsTime;
+      transition: background-color $trsTime;
 
       &:hover {
-        background-color: @galleryColor;
+        background-color: $galleryColor;
       }
     }
 
     &__item:hover &
     {
       &__img_wrap:after {
-        border-bottom-color: @galleryColor;
+        border-bottom-color: $galleryColor;
       }
 
       &__title {
-        color: @white;
+        color: $white;
       }
 
       &__tags {
-        color: @hoverColor;
+        color: $hoverColor;
       }
 
       &__item_nav {
@@ -476,7 +476,7 @@
       {
         position: relative;
         height: 237px;
-        background: @black;
+        background: $black;
 
         &:after {
           position: absolute;
@@ -488,7 +488,7 @@
           border-right: 15px solid transparent;
           border-bottom: 10px solid #fbfaf8;
           content: '';
-          transition: border-bottom-color @trsTime;
+          transition: border-bottom-color $trsTime;
         }
       }
 
@@ -499,13 +499,13 @@
         &__title,
         &__tags {
           text-transform: capitalize;
-          transition: color @trsTime;
+          transition: color $trsTime;
         }
 
         &__title {
           // margin-top: 23px;
           font-size: 1.428571428571429em;
-          color: @hoverColor;
+          color: $hoverColor;
         }
 
         &__tags {
@@ -527,11 +527,11 @@
         left: 50%;
         width: 80px;
         font-size: 25px;
-        color: @white;
+        color: $white;
         transform: translateX(-50%);
         opacity: 0;
-        // transition: bottom @trsTime;
-        transition: opacity @trsTime;
+        // transition: bottom $trsTime;
+        transition: opacity $trsTime;
 
         &_link {
           float: left;
@@ -571,7 +571,7 @@
     background-color: rgba(0, 0, 0, .2);
 
     &:hover .video_presentation__control {
-      color: @hoverColor;
+      color: $hoverColor;
     }
   }
 
@@ -618,7 +618,7 @@
     margin-top: 30px;
     font-weight: 400;
     text-align: center;
-    color: @hoverColor;
+    color: $hoverColor;
   }
 }
 
@@ -680,8 +680,8 @@
 .counters {
   padding: 53px 0 37px;
   // height: 300px;
-  background-color: @bgColor;
-  background: linear-gradient(to right, @grdBlackColor, @bgColor);
+  background-color: $bgColor;
+  background: linear-gradient(to right, $grdBlackColor, $bgColor);
 }
 
   .counter
@@ -690,7 +690,7 @@
 
     &__icon,
     &__title {
-      color: @hoverColor;
+      color: $hoverColor;
     }
 
     &__icon {
@@ -714,7 +714,7 @@
     &:after {
       display: block;
       margin: 23px auto;
-      border-top: 2px solid @white;
+      border-top: 2px solid $white;
       width: 30px;
       content: '';
     }
@@ -728,10 +728,10 @@
   &__slider_nav {
     margin: 34px auto 0;
     width: 52px;
-    // width: @w52px;
+    // width: $w52px;
     font-weight: 300;
     font-size: 23px;
-    color: @hoverColor;
+    color: $hoverColor;
   }
 
     &__nav_prev {
@@ -749,11 +749,11 @@
     margin-top: 34px;
     // height: 395px;
     // background-color: #777;
-    transition: border-color @trsTime, background-color @trsTime;
+    transition: border-color $trsTime, background-color $trsTime;
 
     &__img_wrap {
       height: 220px;
-      background: @black;
+      background: $black;
     }
 
     &__text {
@@ -766,7 +766,7 @@
       &__title,
       &__desc,
       &__link {
-        transition: color @trsTime;
+        transition: color $trsTime;
       }
 
       &__desc,
@@ -791,25 +791,25 @@
       &__link {
         display: block;
         margin-top: 20px;
-        color: @hoverColor;
+        color: $hoverColor;
       }
 
     &:hover {
-      background-color: @galleryColor;
+      background-color: $galleryColor;
     }
 
     &:hover &
     {
       &__text {
-        border-color: @galleryColor;
+        border-color: $galleryColor;
       }
 
       &__title {
-        color: @hoverColor;
+        color: $hoverColor;
       }
 
       &__desc {
-        color: @white;
+        color: $white;
       }
     }
   }
@@ -868,11 +868,11 @@
   &__post:hover &
   {
     &__desc {
-      color: @hoverColor;
+      color: $hoverColor;
     }
 
     &__date {
-      color: @white;
+      color: $white;
     }
   }
 
@@ -881,7 +881,7 @@
       font-weight: 400;
       // line-height: 20px;
       line-height: 1.428571428571429;
-      transition: color @trsTime;
+      transition: color $trsTime;
     }
 
     &__desc
@@ -922,7 +922,7 @@
     margin-top: 10px;
     width: 48.14814814814815%;
     height: 98px;
-    background-color: @black;
+    background-color: $black;
 
     &:nth-child(odd) {
       margin-left: 3.703703703703704%;
@@ -933,7 +933,7 @@
 .footer__bold {
   font-weight: inherit;
   color: #959595;
-  transition: color @trsTime;
+  transition: color $trsTime;
 }
 
 .footer_bottom
@@ -945,13 +945,13 @@
   font-size: 0.9285714285714286em;
   // line-height: 20px;
   line-height: 1.538461538461538;
-  color: @darkGrey;
+  color: $darkGrey;
   background-color: #111111;
 
   &__left_menu,
   &__right_menu
   {
-    // width: @w1200px;
+    // width: $w1200px;
     font-style: normal;
 
     .menu
@@ -972,11 +972,11 @@
       &__link
       {
         display: inline;
-        transition: color @trsTime;
+        transition: color $trsTime;
 
         &:hover,
         &:hover .footer_bottom__bold {
-          color: @hoverColor;
+          color: $hoverColor;
         }
       }
     }
@@ -992,5 +992,5 @@
 
 }
 
-@import url('adaptive.less');
-// @import url('templateImage.less');
+@import 'adaptive';
+// @import 'templateImage';
