@@ -1,14 +1,16 @@
+
 mixin light_section(settings)
 
   - var owner_container_class = settings.is_container_class ? ' ' + settings.class + '__container' : ''
+  //- - var owner_container_class = settings.class + '__container'
   - var center = settings.title.not_col_class ? '' : 'col '
 
   section(id=settings.class class="section light_section " + settings.class)
     div(class="container" + owner_container_class)
 
       if settings.title
-        h2.title.section__title.light_section__title #{settings.title.value}
-        p(class=center + "col_8 section__desc light_section__desc") #{settings.title.desc}
+        h2.title.section__title.light_section__title= settings.title.value
+        p(class=center + "col_8 section__desc light_section__desc")= settings.title.desc
 
       block
 
@@ -31,3 +33,21 @@ mixin dark_section(settings)
     else
       div(class=container_classes)
         block
+
+mixin footer_list(items, first_desc = true)
+
+  for item, index in items
+    div(class={footer_top__post: true, last: index == items.length - 1})
+      if first_desc
+        span.footer_top__date #{item.date}
+        p.footer_top__desc !{item.desc}
+      else
+        p.footer_top__desc !{item.desc}
+        span.footer_top__date #{item.date}
+
+mixin footer_menu_list(items)
+
+  for item, index in items
+    li(class={menu__item: true, last: index == items.length - 1}) !{item}
+      |
+      |
