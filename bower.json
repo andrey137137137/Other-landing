@@ -18,7 +18,11 @@
   "dependencies": {
     "jquery": "latest",
     "html5shiv": "^3.7.3",
-    "respond": "^1.4.2"
+    "respond": "^1.4.2",
+    "easytabs": "^3.2.0",
+    "bxslider-4": "^4.2.12",
+    "waypoints": "waypoint#^4.0.1",
+    "animate.css": "^3.5.2"
   },
   "devDependencies": {},
   "overrides": {
@@ -30,6 +34,23 @@
     },
     "jquery": {
       "main": "dist/jquery.min.js"
+    },
+    "easytabs": {
+      "main": "lib/jquery.easytabs.min.js"
+    },
+    "bxslider-4": {
+      "main": [
+        "dist/jquery.bxslider.min.js",
+        "dist/jquery.bxslider.min.css",
+        "dist/images/bx_loader.gif",
+        "dist/images/controls.png"
+      ]
+    },
+    "animate.css": {
+      "main": "./animate.min.css"
+    },
+    "waypoints": {
+      "main": "lib/noframework.waypoints.min.js"
     }
   }
 }
