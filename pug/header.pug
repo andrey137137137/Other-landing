@@ -71,8 +71,22 @@ header#header.section.dark_section.header
 
 |
 |
+ul.main_slider__slider_list(style="margin-top: 100px;")
+  li
+    img(src="img/bg/main_slider.jpg")
+    .dark_section__foreground.main_slider__foreground
+    article.container.main_slider__container
 
-section#main_slider.section.dark_section.main_slider
+      h1.col_6_n_30_px.title.section__title.main_slider__title Unique and Modern Design
+        b.main_slider__bold Portfolio PSD Template
+      p.col_6_n_30_px.section__desc.main_slider__desc Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+      a.btn.main_slider__btn(href="#") Get started
+  li
+    img(src="img/bg/video_presentation.jpg")
+  li
+    img(src="img/bg/clients.jpg")
+
+//- section#main_slider.section.dark_section.main_slider
   ul.main_slider__slider_list
 
     li.main_slider__slide
@@ -84,17 +98,17 @@ section#main_slider.section.dark_section.main_slider
         p.col_6_n_30_px.section__desc.main_slider__desc Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
         a.btn.main_slider__btn(href="#") Get started
 
-  .slider_nav.main_slider__nav
+.slider_nav.main_slider__nav
 
-    a.slider_nav__arrow.slider_nav__prev(href="#")
-    a.slider_nav__arrow.slider_nav__next(href="#")
+  .slider_nav__arrow.slider_nav__prev
+  .slider_nav__arrow.slider_nav__next
 
-    ul.slider_nav__thumbs.main_slider__thumbs
-      - for (var i = 0; i < 5; i++)
-        li.slider_nav__thumb.main_slider__thumb
-          if i == 1
-            a.thumb__link.main_slider__thumb_link.active(href="#")
-              span.thumb__dot
-          else
-            a.thumb__link.main_slider__thumb_link(href="#")
-              span.thumb__dot
+  ul.slider_nav__thumbs.main_slider__thumbs
+    - for (var i = 0; i < 5; i++)
+      li.slider_nav__thumb.main_slider__thumb
+        //- if i == 1
+        //-   a.thumb__link.main_slider__thumb_link.active(href="")
+        //-     span.thumb__dot
+        //- else
+        a.thumb__link.main_slider__thumb_link(href="")
+          span.thumb__dot

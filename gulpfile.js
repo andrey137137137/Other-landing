@@ -45,6 +45,15 @@ gulp.task('html', function () {
     // .pipe(connect.reload());
 });
 
+gulp.task('css_libs', function() {
+  var filterJS = gulpFilter('**/*.css', {restore: true});
+
+  return gulp.src('./bower.json')
+    .pipe(mainBowerFiles())
+    .pipe(filterJS)
+    .pipe(gulp.dest('app/css/libs'));
+});
+
 gulp.task('css', function () {
   return gulp.src('scss/*.scss')
     // .pipe(cssGlobbing())
@@ -66,7 +75,7 @@ gulp.task('js_libs', function() {
   return gulp.src('./bower.json')
     .pipe(mainBowerFiles())
     .pipe(filterJS)
-    .pipe(gulp.dest('app/libs/js'));
+    .pipe(gulp.dest('app/js/libs'));
 });
 
 gulp.task('js', function () {
@@ -77,12 +86,12 @@ gulp.task('js', function () {
     // .pipe(connect.reload());
 });
 
-// gulp.task('watch', function () {
-//   gulp.watch('pug/*.pug', ['html']);
-//   gulp.watch(['scss/*.scss', 'scss/normalize/*.scss'], ['css']);
-//   gulp.watch('js/*.js', ['js']);
-// });
+gulp.task('watch', function () {
+  gulp.watch('pug/*.pug', ['html']);
+  gulp.watch(['scss/*.scss', 'scss/normalize/*.scss'], ['css']);
+  gulp.watch('js/*.js', ['js']);
+});
 
 // gulp.task('default', ['connect', 'html', 'css', 'js', 'watch']);
-// gulp.task('default', ['html', 'css', 'js', 'watch']);
-gulp.task('default', ['html', 'css', 'js_libs', 'js']);
+gulp.task('default', ['html', 'css_libs', 'css', 'js_libs', 'js', 'watch']);
+// gulp.task('default', ['html', 'css_libs', 'css', 'js_libs', 'js']);
