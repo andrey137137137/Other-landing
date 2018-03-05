@@ -4565,11 +4565,17 @@ ul {
 }
 
 .main_slider__slide {
+  display: none;
   width: 100%;
   background: url("../img/bg/main_slider.jpg") no-repeat center top;
   -webkit-background-size: cover;
   background-size: cover;
   z-index: 0;
+}
+
+.main_slider__slide.active,
+.main_slider__slide.movable {
+  display: block;
 }
 
 .main_slider__slide.active {
@@ -4615,7 +4621,7 @@ ul {
 
 .main_slider__nav {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);

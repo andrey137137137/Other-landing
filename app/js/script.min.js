@@ -13,32 +13,32 @@ var slider = (function(){
 
       var self = this;
 
-      $('.main_slider__nav .slider_nav__arrow').click(function()
+      $('.main_slider__nav .slider_nav__arrow').click(function(event)
       {
+        event.preventDefault();
+
         var $this = $(this),
             slides = $this.closest('.main_slider').find('.main_slider__slide'),
             activeSlide = slides.filter('.active'),
             prevSlide = activeSlide.prev(),
             nextSlide = activeSlide.next(),
-            firstSlide = activeSlide.first(),
-            lastSlide = activeSlide.last();
-
-        // console.log($this.closest('.main_slider'));
+            firstSlide = slides.first(),
+            lastSlide = slides.last();
 
         if ($this.hasClass('slider_nav__next'))
         {
-          if (nextSlide.length)
+          if (nextSlide.index() >= 0)
           {
-            self.moveSlide(nextSlide, 'forward'); 
+            self.moveSlide(nextSlide, 'forward');
           }
           else
           {
-            self.moveSlide(firstSlide, 'forward'); 
+            self.moveSlide(firstSlide, 'forward');
           }
         }
         else if ($this.hasClass('slider_nav__prev'))
         {
-          if (prevSlide.length)
+          if (prevSlide.index() >= 0)
           {
             self.moveSlide(prevSlide, 'backward');
           }
@@ -59,10 +59,10 @@ var slider = (function(){
           count = slides.length,
           duration = 500;
 
-      movableSlide.css('left', '100%').addClass('movable');
+      movableSlide.css('opacity', 0).addClass('movable');
 
       // activeSlide.animate({'opacity': 0}, duration);
-      movableSlide.animate({'left': 0}, duration, function()
+      movableSlide.animate({'opacity': 1}, duration, function()
       {
         var $this = $(this);
 
