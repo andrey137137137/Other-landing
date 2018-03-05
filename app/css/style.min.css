@@ -4571,6 +4571,10 @@ ul {
   background-size: cover;
 }
 
+.main_slider__slide.active {
+  z-index: 1;
+}
+
 .main_slider__container {
   z-index: 10000000;
   padding-top: 140px;
@@ -4606,6 +4610,7 @@ ul {
 
 .main_slider__nav {
   position: absolute;
+  z-index: 1;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
