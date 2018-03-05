@@ -125,10 +125,16 @@
       width: 100%;
       background: url(../img/bg/main_slider.jpg) no-repeat center top;
       background-size: cover;
+      z-index: 0;
 
       &.active {
         // position: relative;
         z-index: 1;
+      }
+
+      &.movable {
+        // position: relative;
+        z-index: 2;
       }
     }
 

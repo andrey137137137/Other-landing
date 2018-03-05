@@ -4569,10 +4569,15 @@ ul {
   background: url("../img/bg/main_slider.jpg") no-repeat center top;
   -webkit-background-size: cover;
   background-size: cover;
+  z-index: 0;
 }
 
 .main_slider__slide.active {
   z-index: 1;
+}
+
+.main_slider__slide.movable {
+  z-index: 2;
 }
 
 .main_slider__container {

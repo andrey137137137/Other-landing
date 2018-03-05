@@ -6,10 +6,10 @@ var slider = (function(){
 
     init: function()
     {
-      // if (!$('.main_slider__slider_list').length)
-      // {
-      //   return;
-      // }
+      if (!$('.main_slider__slider_list').length)
+      {
+        return;
+      }
 
       var self = this;
 
@@ -55,18 +55,19 @@ var slider = (function(){
       var container = slide.closest('.main_slider'),
           slides = container.find('.main_slider__slide'),
           activeSlide = slides.filter('.active'),
-          movableSlide = slides.filter('.movable')
+          movableSlide = slide,
           count = slides.length,
           duration = 500;
 
-      slide.css('opacity', 0).addClass('movable');
+      movableSlide.css('left', '100%').addClass('movable');
 
-      activeSlide.animate({'opacity': 0}, duration);
-      movableSlide.animate({'opacity': 1}, duration, function()
+      // activeSlide.animate({'opacity': 0}, duration);
+      movableSlide.animate({'left': 0}, duration, function()
       {
         var $this = $(this);
 
-        slides.css('opacity', 0).removeClass('active');
+        // slides.css('opacity', 0).removeClass('active');
+        slides.removeClass('active');
         $this.toggleClass('movable active');
       });
     }
