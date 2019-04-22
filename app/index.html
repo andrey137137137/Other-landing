@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Waxom</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/libs/bxslider-4/dist/jquery.bxslider.min.css">
-    <script src="js/libs/html5shiv/dist/html5shiv.min.js"></script>
-    <script src="js/libs/respond/dest/respond.min.js"></script>
   </head>
   
   <body>
@@ -39,22 +39,22 @@
     
     <!-- main_slider-->
     
-    <section class="section dark_section main_slider" id="main_slider">
-      <ul class="main_slider__slider_list">
-        <li class="main_slider__slide active">
+    <section class="section dark_section main_slider" id="mainSliderSection">
+      <div class="main_slider__slider_list" id="mainSlider">
+        <div class="main_slider__slide active">
           <div class="dark_section__foreground main_slider__foreground"></div><img src="img/bg/main_slider.jpg">
           <article class="container main_slider__container">
             <h1 class="col_6_n_30_px title section__title main_slider__title">Unique and Modern Design<b class="main_slider__bold">Portfolio PSD Template</b></h1>
             <p class="col_6_n_30_px section__desc main_slider__desc">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p><a class="btn main_slider__btn" href="#">Get started</a>
           </article>
-        </li>
-        <li class="main_slider__slide">
+        </div>
+        <div class="main_slider__slide">
           <div class="dark_section__foreground main_slider__foreground"></div><img src="img/bg/video_presentation.jpg">
-        </li>
-        <li class="main_slider__slide">
+        </div>
+        <div class="main_slider__slide">
           <div class="dark_section__foreground main_slider__foreground"></div><img src="img/bg/clients.jpg">
-        </li>
-      </ul>
+        </div>
+      </div>
       <div class="slider_nav main_slider__nav"><a class="slider_nav__arrow slider_nav__prev" href="#"></a><a class="slider_nav__arrow slider_nav__next" href="#"></a>
         <ul class="slider_nav__thumbs main_slider__thumbs">
           <li class="slider_nav__thumb main_slider__thumb"><a class="thumb__link main_slider__thumb_link" href="#"><span class="thumb__dot"></span></a></li>
@@ -415,9 +415,8 @@
     
     <!-- scripts-->
     
-    <script src="js/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../app/js/libs/bxslider-4/dist/jquery.bxslider.min.js"></script>
-    <script src="js/script.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <script src="js/common.bundle.js"></script>
     
   </body>
   

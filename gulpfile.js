@@ -56,7 +56,7 @@ function html() {
   var YOUR_LOCALS = {};
 
   return gulp
-    .src(pathes.html.src + "/*.pug")
+    .src(pathes.html.src + "/index.pug")
     .pipe($gp.plumber())
     .pipe(
       $gp.pug({
