@@ -333,9 +333,9 @@ html
         desc: 'Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.'
       }
     })
-      ul.clearfix.blog__list
-        - for (var i = 1; i <= 3; i++)
-          li.float_col.col_4
+      #blogSlider
+        - for (var i = 1; i <= 7; i++)
+          .blog__slide
             article.card.post
               .img_wrap.post__img_wrap
                 img.img_wrap__img(src="img/blog/thumbs/" + i + ".jpg" alt="Lorem ipsum dolor sit amet")
@@ -346,7 +346,7 @@ html
               .card__date
                 span.card__day 30
                 span.card__month Sep
-              
+
       .clearfix.blog__slider_nav
         a.im_icon.im_icon_arrow-left-circle.blog__nav_prev(href="#")
         a.im_icon.im_icon_arrow-right-circle.blog__nav_next(href="#")

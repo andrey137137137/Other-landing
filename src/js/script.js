@@ -37,8 +37,8 @@ $(document).ready(function() {
     infinite: true,
     prevArrow: $(".slider_nav__prev"),
     nextArrow: $(".slider_nav__next"),
-    appendDots: $(".main_slider__nav"),
     dots: true,
+    appendDots: $(".main_slider__nav"),
     dotsClass: "slider_nav__thumbs main_slider__thumbs",
     customPaging(slick, i) {
       return `<a class="thumb__link main_slider__thumb_link">
@@ -48,5 +48,14 @@ $(document).ready(function() {
     speed: 500,
     fade: true,
     cssEase: "linear"
+  });
+
+  $("#blogSlider").slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: $(".blog__nav_prev"),
+    nextArrow: $(".blog__nav_next"),
+    speed: 500
   });
 });

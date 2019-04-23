@@ -5114,6 +5114,11 @@ ul {
   padding-bottom: 72px;
 }
 
+.blog__slide {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .blog__slider_nav {
   margin: 34px auto 2px;
   width: 52px;

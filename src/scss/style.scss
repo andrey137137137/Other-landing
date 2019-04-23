@@ -709,6 +709,11 @@
   padding-bottom: 72px;
   // height: 753px;
 
+  &__slide {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   &__slider_nav {
     margin: 34px auto 2px;
     width: 52px;
