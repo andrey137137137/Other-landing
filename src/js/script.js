@@ -7,13 +7,44 @@ $(document).ready(function() {
   $("#header").addClass("narrow");
 
   // MAIN SLIDER
+  $("#mainSlider").on("init", function(e, slick) {
+    const $items = slick.$dots.find("li");
+    $items.addClass("slider_nav__thumb main_slider__thumb");
+    $items
+      .first()
+      .find(".main_slider__thumb_link")
+      .addClass("active");
+  });
+
+  $("#mainSlider").on("beforeChange", function(
+    e,
+    slick,
+    currentSlide,
+    nextSlide
+  ) {
+    console.log(`Slide ${nextSlide}`);
+    slick.$dots
+      .find(`li:eq(${currentSlide})`)
+      .find(".main_slider__thumb_link")
+      .removeClass("active");
+    slick.$dots
+      .find(`li:eq(${nextSlide})`)
+      .find(".main_slider__thumb_link")
+      .addClass("active");
+  });
+
   $("#mainSlider").slick({
     infinite: true,
     prevArrow: $(".slider_nav__prev"),
     nextArrow: $(".slider_nav__next"),
     appendDots: $(".main_slider__nav"),
     dots: true,
-    dotsClass: "main_slider__thumbs",
+    dotsClass: "slider_nav__thumbs main_slider__thumbs",
+    customPaging(slick, i) {
+      return `<a class="thumb__link main_slider__thumb_link">
+        <span class="thumb__dot"></span>
+      </a>`;
+    },
     speed: 500,
     fade: true,
     cssEase: "linear"
